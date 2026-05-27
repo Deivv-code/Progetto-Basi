@@ -51,6 +51,14 @@ OPTIONALLY ENCLOSED BY '"'
 IGNORE 1 LINES
 (nome_piatto,percentuale_sconto,ristorante, prezzo);
 
+# popolamento Inclusione
+LOAD DATA LOCAL INFILE "C:/Users/dvdca/Desktop/progetto_basi_script/Popolamento/Inclusione.csv"
+INTO table Inclusione
+FIELDS TERMINATED BY ','
+OPTIONALLY ENCLOSED BY '"'
+IGNORE 1 LINES
+(piatto_ristorante,piatto_nome,ordine);
+
 # popolamento Allergeni
 LOAD DATA LOCAL INFILE "C:/Users/dvdca/Desktop/progetto_basi_script/Popolamento/Allergeni.csv"
 INTO table Allergeno
