@@ -99,7 +99,7 @@ FOREIGN KEY (allergeno) REFERENCES Allergeno(nome),
 FOREIGN KEY (piatto, piatto_ristorante) REFERENCES Piatto(nome_piatto, ristorante)
 );
 
-Drop table if exists Riceuta;
+Drop table if exists Ricevuta;
 Create table Ricevuta(
 numero_univoco int PRIMARY KEY not null,
 totale_pagato double not null,
