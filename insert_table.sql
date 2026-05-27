@@ -1,7 +1,7 @@
 USE progettocorriera;
 
 # popolamento Clienti
-LOAD DATA LOCAL INFILE "C:/Users/dvdca/Desktop/progetto_basi_script/Clienti.csv"
+LOAD DATA LOCAL INFILE "C:/Users/dvdca/Desktop/progetto_basi_script/Popolamento/Clienti.csv"
 INTO table Cliente
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
@@ -9,7 +9,7 @@ IGNORE 1 LINES;
 UPDATE Cliente SET numero_telefono = TRIM(BOTH '\r' from Cliente.numero_telefono);
 
 # popolamento Rider
-LOAD DATA LOCAL INFILE "C:/Users/dvdca/Desktop/progetto_basi_script/Riders.csv"
+LOAD DATA LOCAL INFILE "C:/Users/dvdca/Desktop/progetto_basi_script/Popolamento/Riders.csv"
 INTO table Rider
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
@@ -17,7 +17,7 @@ IGNORE 1 LINES;
 UPDATE Rider SET IBAN = TRIM(BOTH '\r' from IBAN);
 
 # popolamento Ristoratore
-LOAD DATA LOCAL INFILE "C:/Users/dvdca/Desktop/progetto_basi_script/Ristoratori.csv"
+LOAD DATA LOCAL INFILE "C:/Users/dvdca/Desktop/progetto_basi_script/Popolamento/Ristoratori.csv"
 INTO table Ristoratore
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
@@ -26,7 +26,7 @@ IGNORE 1 LINES
 UPDATE Ristoratore SET numero_telefono = TRIM(BOTH '\r' from numero_telefono);
 
 # popolamento Ristorante
-LOAD DATA LOCAL INFILE "C:/Users/dvdca/Desktop/progetto_basi_script/Ristoranti.csv"
+LOAD DATA LOCAL INFILE "C:/Users/dvdca/Desktop/progetto_basi_script/Popolamento/Ristoranti.csv"
 INTO table Ristorante
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
@@ -35,7 +35,7 @@ IGNORE 1 LINES
 UPDATE Ristorante SET numero_telefono = TRIM(BOTH '\r' from numero_telefono);
 
 # popolamento Ordini
-LOAD DATA LOCAL INFILE "C:/Users/dvdca/Desktop/progetto_basi_script/Ordini.csv"
+LOAD DATA LOCAL INFILE "C:/Users/dvdca/Desktop/progetto_basi_script/Popolamento/Ordini.csv"
 INTO table Ordine
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
@@ -44,7 +44,7 @@ IGNORE 1 LINES
 cliente, rider_numero, IBAN_rider, CAP_ritiro);
 
 # popolamento Allergeni
-LOAD DATA LOCAL INFILE "C:/Users/dvdca/Desktop/progetto_basi_script/Allergeni.csv"
+LOAD DATA LOCAL INFILE "C:/Users/dvdca/Desktop/progetto_basi_script/Popolamento/Allergeni.csv"
 INTO table Allergeno
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
