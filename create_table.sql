@@ -85,7 +85,7 @@ ON UPDATE CASCADE
 
 Drop table if exists Allergeno;
 Create table Allergeno(
-nome varchar(20) PRIMARY KEY not null,
+nome varchar(40) PRIMARY KEY not null,
 descrizione varchar(100) not null
 );
 

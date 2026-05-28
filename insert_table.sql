@@ -73,9 +73,9 @@ IGNORE 1 LINES;
 INSERT INTO Contenuto(allergeno,piatto,piatto_ristorante) 
 values ("Glutine","Pasta alla Carbonara","+39 0556794356"),
 ("Glutine","Smash Burger","+39 0556794356"),
-("Glutine","Pasta al forno", "+39 0557869567"),
+("Glutine","Pasta al Forno", "+39 0557869567"),
 ("Glutine","Pasticciotti","+39 0557869567"),
-("Glutine","Parmiagiana","+39 0557869567"),
+("Glutine","Parmigiana","+39 0557869567"),
 ("Uova e derivati","Pasta alla Carbonara","+39 0556794356"),
 ("Uova e derivati","Smash Burger","+39 0556794356"),
 ("Uova e derivati","Pasticciotti","+39 0557869567"),
