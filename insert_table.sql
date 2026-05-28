@@ -65,3 +65,11 @@ INTO table Allergeno
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
 IGNORE 1 LINES;
+
+# popolamento Contenuto
+LOAD DATA LOCAL INFILE "C:/Users/dvdca/Desktop/progetto_basi_script/Popolamento/Contenuto.csv"
+INTO table Contenuto
+FIELDS TERMINATED BY ','
+OPTIONALLY ENCLOSED BY '"'
+IGNORE 1 LINES
+(piatto_ristorante,piatto,allergeno);
