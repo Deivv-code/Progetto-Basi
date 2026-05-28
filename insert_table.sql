@@ -50,6 +50,9 @@ FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
 IGNORE 1 LINES
 (nome_piatto,percentuale_sconto,ristorante, prezzo);
+UPDATE piatto SET 
+nome_piatto = TRIM(BOTH '\r' from nome_piatto), 
+ristorante = TRIM(BOTH '\r' from ristorante);
 
 # popolamento Inclusione
 LOAD DATA LOCAL INFILE "C:/Users/dvdca/Desktop/progetto_basi_script/Popolamento/Inclusione.csv"
@@ -67,9 +70,25 @@ OPTIONALLY ENCLOSED BY '"'
 IGNORE 1 LINES;
 
 # popolamento Contenuto
-LOAD DATA LOCAL INFILE "C:/Users/dvdca/Desktop/progetto_basi_script/Popolamento/Contenuto.csv"
-INTO table Contenuto
+INSERT INTO Contenuto(allergeno,piatto,piatto_ristorante) 
+values ("Glutine","Pasta alla Carbonara","+39 0556794356"),
+("Glutine","Smash Burger","+39 0556794356"),
+("Glutine","Pasta al forno", "+39 0557869567"),
+("Glutine","Pasticciotti","+39 0557869567"),
+("Glutine","Parmiagiana","+39 0557869567"),
+("Uova e derivati","Pasta alla Carbonara","+39 0556794356"),
+("Uova e derivati","Smash Burger","+39 0556794356"),
+("Uova e derivati","Pasticciotti","+39 0557869567"),
+("Lupino e derivati","Trippa vegana", "+39 3494380239"),
+("Soia e derivati","Ravioli carne","+39 0556767675"),
+("Soia e derivati","Ravioli vegetariani","+39 0556767675");
+
+
+
+# popolamento Ricevuta
+LOAD DATA LOCAL INFILE "C:/Users/dvdca/Desktop/progetto_basi_script/Popolamento/Ricevute.csv"
+INTO table Ricevuta
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
 IGNORE 1 LINES
-(piatto_ristorante,piatto,allergeno);
+(metodo_di_pagamento,data_pagamento,orario_pagamento,numero_univoco,totale_pagato);
