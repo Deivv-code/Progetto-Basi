@@ -1,7 +1,7 @@
-USE progettocorriera;
+USE ProgettoCorriera;
 
 # popolamento Clienti
-LOAD DATA LOCAL INFILE "C:/Users/dvdca/Desktop/progetto_basi_script/Popolamento/Clienti.csv"
+LOAD DATA LOCAL INFILE "C:/Users/loreb/Documents/Scuola/progetto-bdsi/Progetto-Basi/Popolamento/Clienti.csv"
 INTO table Cliente
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
@@ -9,7 +9,7 @@ IGNORE 1 LINES;
 UPDATE Cliente SET numero_telefono = TRIM(BOTH '\r' from Cliente.numero_telefono);
 
 # popolamento Rider
-LOAD DATA LOCAL INFILE "C:/Users/dvdca/Desktop/progetto_basi_script/Popolamento/Riders.csv"
+LOAD DATA LOCAL INFILE "C:/Users/loreb/Documents/Scuola/progetto-bdsi/Progetto-Basi/Popolamento/Riders.csv"
 INTO table Rider
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
@@ -17,7 +17,7 @@ IGNORE 1 LINES;
 UPDATE Rider SET IBAN = TRIM(BOTH '\r' from IBAN);
 
 # popolamento Ristoratore
-LOAD DATA LOCAL INFILE "C:/Users/dvdca/Desktop/progetto_basi_script/Popolamento/Ristoratori.csv"
+LOAD DATA LOCAL INFILE "C:/Users/loreb/Documents/Scuola/progetto-bdsi/Progetto-Basi/Popolamento/Ristoratori.csv"
 INTO table Ristoratore
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
@@ -26,7 +26,7 @@ IGNORE 1 LINES
 UPDATE Ristoratore SET numero_telefono = TRIM(BOTH '\r' from numero_telefono);
 
 # popolamento Ristorante
-LOAD DATA LOCAL INFILE "C:/Users/dvdca/Desktop/progetto_basi_script/Popolamento/Ristoranti.csv"
+LOAD DATA LOCAL INFILE "C:/Users/loreb/Documents/Scuola/progetto-bdsi/Progetto-Basi/Popolamento/Ristoranti.csv"
 INTO table Ristorante
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
@@ -35,7 +35,7 @@ IGNORE 1 LINES
 UPDATE Ristorante SET numero_telefono = TRIM(BOTH '\r' from numero_telefono);
 
 # popolamento Ordini
-LOAD DATA LOCAL INFILE "C:/Users/dvdca/Desktop/progetto_basi_script/Popolamento/Ordini.csv"
+LOAD DATA LOCAL INFILE "C:/Users/loreb/Documents/Scuola/progetto-bdsi/Progetto-Basi/Popolamento/Ordini.csv"
 INTO table Ordine
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
@@ -44,18 +44,18 @@ IGNORE 1 LINES
 cliente, rider_numero, IBAN_rider, CAP_ritiro);
 
 # popolamento Piatti
-LOAD DATA LOCAL INFILE "C:/Users/dvdca/Desktop/progetto_basi_script/Popolamento/Piatti.csv"
+LOAD DATA LOCAL INFILE "C:/Users/loreb/Documents/Scuola/progetto-bdsi/Progetto-Basi/Popolamento/Piatti.csv"
 INTO table Piatto
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
 IGNORE 1 LINES
 (nome_piatto,percentuale_sconto,ristorante, prezzo);
-UPDATE piatto SET 
+UPDATE Piatto SET 
 nome_piatto = TRIM(BOTH '\r' from nome_piatto), 
 ristorante = TRIM(BOTH '\r' from ristorante);
 
 # popolamento Inclusione
-LOAD DATA LOCAL INFILE "C:/Users/dvdca/Desktop/progetto_basi_script/Popolamento/Inclusione.csv"
+LOAD DATA LOCAL INFILE "C:/Users/loreb/Documents/Scuola/progetto-bdsi/Progetto-Basi/Popolamento/Inclusione.csv"
 INTO table Inclusione
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
@@ -63,7 +63,7 @@ IGNORE 1 LINES
 (piatto_ristorante,piatto_nome,ordine);
 
 # popolamento Allergeni
-LOAD DATA LOCAL INFILE "C:/Users/dvdca/Desktop/progetto_basi_script/Popolamento/Allergeni.csv"
+LOAD DATA LOCAL INFILE "C:/Users/loreb/Documents/Scuola/progetto-bdsi/Progetto-Basi/Popolamento/Allergeni.csv"
 INTO table Allergeno
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
@@ -86,7 +86,7 @@ values ("Glutine","Pasta alla Carbonara","+39 0556794356"),
 
 
 # popolamento Ricevuta
-LOAD DATA LOCAL INFILE "C:/Users/dvdca/Desktop/progetto_basi_script/Popolamento/Ricevute.csv"
+LOAD DATA LOCAL INFILE "C:/Users/loreb/Documents/Scuola/progetto-bdsi/Progetto-Basi/Popolamento/Ricevute.csv"
 INTO table Ricevuta
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
