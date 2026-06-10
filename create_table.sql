@@ -50,13 +50,10 @@ citta_ritiro varchar(20) not null,
 cliente varchar(20) not null,
 rider_numero varchar(20),
 IBAN_rider varchar(27),
-ristorante varchar(40) not null,
 
 FOREIGN KEY (cliente) REFERENCES Cliente(numero_telefono)
 ON UPDATE CASCADE,
 FOREIGN KEY (rider_numero, IBAN_rider) REFERENCES Rider(numero_telefono,IBAN)
-ON UPDATE CASCADE,
-FOREIGN KEY (ristorante) REFERENCES Ristorante(numero_telefono)
 ON UPDATE CASCADE
 );
 

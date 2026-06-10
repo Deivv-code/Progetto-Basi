@@ -15,12 +15,12 @@ GROUP BY Cliente.numero_telefono
 ORDER BY totale DESC
 LIMIT 1;
 
-# RISTORANTI ORDINATI PER ORDINI EFFETUATI -- sono 1 ordine per ristorante, quindi non dovrebbero 
-SELECT Ristorante.nome_locale, Ristorante.numero_telefono, COUNT(Ordine.numero_univoco) as ordini_effetuati
-FROM Ristorante
-INNER JOIN Ordine ON Ordine.ristorante = Ristorante.numero_telefono
-GROUP BY Ristorante.numero_telefono
-ORDER BY ordini_effetuati DESC;
+# RISTORANTI ORDINATI PER ORDINI EFFETUATI -- sono 1 ordine per ristorante 
+SELECT Ristorante.numero_telefono, Ristorante.nome_locale, COUNT(*)
+FROM Ordine
+INNER JOIN Inclusione ON Ordine.numero_univoco = Inclusione.ordine
+INNER JOIN Ristorante ON Inclusione.piatto_ristorante = Ristorante.numero_telefono
+GROUP BY Ristorante.numero_telefono, Ordine.numero_univoco;
 
 # RISTORATORI CON RISTORANTE CHE NON HANNO PIATTI CON GLUTINE -- possibile anche senza sub-query
 SELECT Ristoratore.numero_telefono, Ristoratore.nome, Ristoratore.cognome

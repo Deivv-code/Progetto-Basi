@@ -40,7 +40,7 @@ INTO table Ordine
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
 IGNORE 1 LINES
-(ristorante, via_ritiro, provincia_ritiro, citta_ritiro, 
+(via_ritiro, provincia_ritiro, citta_ritiro, 
 cliente, rider_numero, IBAN_rider, CAP_ritiro);
 
 # popolamento Piatti
