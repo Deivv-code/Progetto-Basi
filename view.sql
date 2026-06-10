@@ -1,7 +1,7 @@
 USE ProgettoCorriera;
 
 DROP VIEW IF EXISTS piattiPerOrdine;
-CREATE VIEW piattiPerOrdine(numero_ordine, ciente, nome_piatto, prezzo) AS
+CREATE VIEW piattiPerOrdine(numero_ordine, cliente, nome_piatto, prezzo) AS
 SELECT Ordine.numero_univoco as numero_ordine, Cliente.numero_telefono as cliente, Piatto.nome_piatto as piatto, Piatto.prezzo as prezzo
 FROM Ordine INNER JOIN Inclusione ON Ordine.numero_univoco = Inclusione.ordine
 INNER JOIN Piatto ON Piatto.nome_piatto = Inclusione.piatto_nome AND Piatto.ristorante = Inclusione.piatto_ristorante
